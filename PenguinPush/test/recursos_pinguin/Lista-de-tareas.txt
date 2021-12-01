@@ -1,0 +1,36 @@
+SUGERENCIAS/IDEAS:
+--------------------
+---
+
+
+Modalidades de juego:
+-Jugar Ya! (1Player)
+	-Nueva/Continuar Aventura
+		
+		-Mapa de Aventura: hemisferio sur
+	-Maraton (desbloquea esta opcion, a los pocos niveles 5-10 del modo Aventura)
+		-habilita piezas descubiertas en modo Aventura
+	-Editor Zone
+
+-Multijugador(Local) - PC (Aparece cuando hay niveles editados[Compatibles] o a los pocos niveles 5-10 del modo Aventura)
+	-Numero de jugadores:
+		-Menu: Elegir perfiles existentes para P2,P3,P4; o temporal(no se guarda) o nuevo.
+			-Maraton
+			-Editor Zone (solo visible: 2,3,4 puntos por jugador)
+-Opciones de Juego
+	-Controles:([P1], P2, P3, P4) [Se guarda en el perfil]
+	-Graficos: Sombra, tamaño, pantalla completa, fps.
+	-Audio: Sonido & Musica, Act/des: Tus Pasos,pasos Ene. [Se guarda en el perfil]
+
+
+-------------------------
+Juego general
+-(Investigar)segundo ataque pinguinos, manteniendo el boton empuje, como carga
+
+
+---------------------------
+MULTIJUGADOR:
+-Cola de degradado, estela multijugador...
+-[Maraton] Posicion Esquinas de jugadores: 1,2,3,4 en las 4 esquinas de la zona
+-
+-

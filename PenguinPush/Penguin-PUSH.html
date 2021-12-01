@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <title>AppGameKit Web App</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="user-scalable=no" />
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <link href="css/stile.css" rel="stylesheet">
+     <style>
+       
+       /* div, a, span {
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+           
+            font-family: Helvetica, Arial, sans-serif;
+            line-height: 1.25em;
+            margin: 0;
+            padding: 0;
+            padding-top: 0px;
+            background-color: #000;
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+         }
+        
+        .container {
+            position: relative;
+            text-align: center;
+            margin-top: 0;
+            min-height: 300px;
+        }
+        
+        .footer {
+            width: 500px;
+            margin: 0 auto;
+            padding: 20px 20px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .footer a.link {
+            font-weight: bold;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            text-align: center;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 10px;
+            border-radius: 6px;
+            color: #ccc;
+            -moz-transition: all .3s;
+            transition: all .3s;
+        }
+        
+        .footer a.link:hover {
+            color: #fff;
+            background-color: rgba(0,0,0,.5);
+        }
+
+        .footer a.logo {
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 8px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            -moz-transition: all .3s;
+            transition: all .3s;
+        }
+        
+        .footer img {
+            height: 54px;
+            display: block;
+            margin: 0 auto;
+        }*/
+        
+        /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
+        canvas.emscripten { background: #000; border: 0px none; padding-right: ; margin-left: ; margin-right: ; display: block; }
+
+    </style>
+</head>
+
+<body id="demo">
+    <!--loader-->
+    <div class="">
+        <h1>LOADER...</h1>
+        <img src="imagenes/sprites/penguins_by_hafunui-d5rsyzs.gif" alt="loading">
+    </div>
+    <!--menu-->
+    <main>
+        <img id="fondo" src="recursos_pinguin/VARIOS/speedpaint__ice_labyrinth_by_i_netgrafx.jpg" alt="fondo">
+        <i class="fas fa-bars fa-3x burguer" onclick="menu()"></i>
+        <nav class="superior">
+            <ul>
+                <li><a href="index.html">INICIO</a></li>
+                <li><a href="sobreeljuego.html">QUE ES?</a></li>
+                <li><a href="galeria.html">GALERIA</a></li>
+                <li class="activet"><a href="Penguin-PUSH.html">DEMO</a></li>
+                <li><a href="descarga.html">DESCARGA</a></li>
+                <li><a href="comentarios.html">COMENTARIOS</a></li>
+            </ul>
+        </nav>
+        <section class="demo">
+            <div style="text-align: center">
+                <div> <span id="agkstatus" style="color:#7f7f7f"></span> </div>
+                <div style="display: inline-block; border: 1px solid; margin: 0px auto">
+                    <canvas class="emscripten" id="canvas" width="1000" height="600" oncontextmenu="event.preventDefault()"></canvas>
+                    <video crossOrigin="anonymous" style="display:none" id="AGKVideo" src=""></video>
+                </div>
+            </div>
+
+            <div class="footer">
+              
+
+                <a class="link" href="#" onclick="Module.requestFullScreen(false,true)">pantalla completa</a>
+              
+            </div>
+        </section>
+        <footer>
+            <div class="contacto">
+                <ul>
+                    <li><a href="http://faceboock.com/alicianami" target="_blank">Sobre mi</a></li>
+                    <li><a href="http://www.appgamekit.com/about-agk"  target="_blank">AppGamekit</a></li>
+                    <li><a href="mailto:alicianami@hotmail.com" target="_blank">Gmail</a></li>
+                </ul>
+            </div>
+            <div class="redesc">
+                <ul>
+                    <li><a href="https://www.youtube.com/user/simulatorone/" target="_blank"><i class="fab fa-youtube fa-3x"></i></a></li>
+                    <li><a href="https://www.facebook.com/PenguinPush/" target="_blank"><i class="fab fa-facebook fa-3x"></i></a></li>
+                    <li><a href="https://twitter.com/Alice_Sim1" target="_blank"><i class="fab fa-twitter fa-3x"></i></a></li>
+                </ul>
+            </div>
+        </footer>
+    </main>
+      
+    <script type='text/javascript'>
+      var agkStatus = document.getElementById("agkstatus");
+      if ( agkStatus )
+      {
+        agkStatus.textContent = "Loading...";
+      }
+
+      var Module = {
+        preRun: [],
+        postRun: [],
+        print: function(text) {},
+        printErr: function(text) {},
+        canvas: (function() {
+          var canvas = document.getElementById('canvas');
+
+          canvas.addEventListener("webglcontextlost", function(e) { alert('WebGL context lost. You will need to reload the page.'); e.preventDefault(); }, false);
+
+          return canvas;
+        })(),
+        setStatus: function(text) {},
+        totalDependencies: 0,
+        monitorRunDependencies: function(left) {}
+      };
+      window.onerror = function(text) {
+        // TODO: do not warn on ok events like simulating an infinite loop or exitStatus
+        var agkStatus = document.getElementById("agkstatus");
+        if ( agkStatus )
+        {
+          agkStatus.style.color = "Red";
+          agkStatus.textContent = text;
+        }
+        //alert(text);
+      };
+    </script>
+
+    <script>
+
+    var script = document.createElement('script');
+    script.src = "AGKPlayer.asm.js";
+    script.onload = function() {
+      setTimeout(function() {
+        
+          (function() {
+            var memoryInitializer = 'AGKPlayer.html.mem';
+            if (typeof Module['locateFile'] === 'function') {
+              memoryInitializer = Module['locateFile'](memoryInitializer);
+            } else if (Module['memoryInitializerPrefixURL']) {
+              memoryInitializer = Module['memoryInitializerPrefixURL'] + memoryInitializer;
+            }
+            var xhr = Module['memoryInitializerRequest'] = new XMLHttpRequest();
+            xhr.open('GET', memoryInitializer, true);
+            xhr.responseType = 'arraybuffer';
+            xhr.send(null);
+          })();
+
+          var script = document.createElement('script');
+          script.src = "AGKPlayer.js";
+          document.body.appendChild(script);
+
+      }, 1); // delaying even 1ms is enough to allow compilation memory to be reclaimed
+    };
+    document.body.appendChild(script);
+
+</script>
+<script src="js/loader.js"></script>   
+</body></html>
