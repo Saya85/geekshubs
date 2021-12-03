@@ -1,0 +1,22 @@
+
+
+body {
+    background-color: beige;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: serif;
+    color: blueviolet;
+}
+
+p {
+   font-size: 0.5em;
+   font-family: sans-serif;
+   color: rgb(59, 155, 115);
+}
+
+img {
+    width: 400;   
+    height: auto;
+}
