@@ -1,0 +1,14 @@
+  body {background-color: bisque;}
+  .container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+ 
+}
+span {
+    font-size: xx-small;
+    font-style: italic;
+}
+h1, h2 {
+    font-style: italic;
+}
