@@ -1,0 +1,36 @@
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+h1{
+
+}
+
+ul{
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+#imag {
+    min-width: 1px;
+    
+}
+
+#cajas {
+    display: flex;
+    justify-content: center; 
+    font-size: 2.5em;  
+}
+
+#parrafo {
+    text-align: center;
+    font-size: 2em;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
