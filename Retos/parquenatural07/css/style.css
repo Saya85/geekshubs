@@ -1,0 +1,52 @@
+* {
+    max-width: 1024px;
+    width: 100%;
+    font-size: 15px;
+    margin:0 auto;
+}
+
+body {
+    width: 900px;
+    border: 5px solid dimgray;  
+}
+h1{
+    text-align: center;
+    color: seagreen;
+    font-size: 20px;
+    
+}
+span{
+    font-size: 20px;
+    color: sienna;
+}
+#menu{
+    display: flex;
+    align-items: center;   
+}
+
+ul{
+    width: 10%;
+    text-align: center;
+    padding-right: 20px;   
+}
+li{
+   margin: 5px; 
+  background-color: magenta;  
+}
+h2 { 
+    color: limegreen;
+    border-bottom:3px solid limegreen ;
+}
+h3{
+    color: sienna;
+}
+p{
+    width: 70%;
+    margin-left: 0%;      
+}
+
+#actived {
+    background-color: sandybrown;
+}
+
+
