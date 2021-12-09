@@ -1,22 +1,36 @@
-* {
-    max-width: 1024px;
-    width: 100%;
-    font-size: 15px;
-    margin:0 auto;
+*{
+    margin:5px;
 }
 
 body {
-    width: 900px;
-    border: 5px solid dimgray;  
+   width: 700px;
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid dimgray;
+       
+}
+img{
+    width: 100%;
+   
+    
+}
+#caja{
+    width: 100%;
+    margin-right: 5px;
+    border: 5px solid rgba(128, 128, 128, 0.103);
+    
+    
 }
 h1{
     text-align: center;
     color: seagreen;
-    font-size: 20px;
-    
+    font-size: 40px;
 }
 span{
-    font-size: 20px;
+    font-size: 40px;
     color: sienna;
 }
 #menu{
@@ -25,13 +39,23 @@ span{
 }
 
 ul{
-    width: 10%;
+    width: 20%;
     text-align: center;
     padding-right: 20px;   
 }
 li{
+    width: 100%;
+    list-style: none;
    margin: 5px; 
-  background-color: magenta;  
+   background-color: magenta;  
+}
+a{
+    width: 100%;
+   
+   text-decoration: none;
+}
+li:hover{
+    background-color: red;
 }
 h2 { 
     color: limegreen;
@@ -41,12 +65,15 @@ h3{
     color: sienna;
 }
 p{
-    width: 70%;
+    width: 100%;
     margin-left: 0%;      
 }
 
 #actived {
     background-color: sandybrown;
 }
+
+
+
 
 
